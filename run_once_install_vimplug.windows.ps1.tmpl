@@ -1,0 +1,15 @@
+{{- if eq .chezmoi.os "windows" }}
+
+$plugPath = "$HOME\vimfiles\autoload\plug.vim"
+
+if (-Not (Test-Path $plugPath)) {
+    Write-Host "Installing vim-plug for Windows PowerShell"
+    $url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    Invoke-WebRequest -Uri $url -OutFile $plugPath -UseBasicParsing
+} else {
+    Write-Host "vim-plug already installed at $plugPath"
+}
+
+vim +PlugInstall +qall
+
+{{- end }}
