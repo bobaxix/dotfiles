@@ -1,0 +1,50 @@
+[alias]
+    squash = rebase --autosquash -i
+    co = checkout
+    cm = commit
+    ls = status
+    dt = difftool
+    
+    stp = "!f() { git --no-pager stash pop stash\"@{$1}\"; }; f"
+    sts = stash save
+    stl = !git --no-pager stash list
+    stdr = "!f() { git stash drop stash\"@{$1}\"; }; f"
+    
+    lg = log --graph --abbrev-commit --decorate
+    
+    # Change last commit message
+    rcm = commit --amend
+    
+    # Print log history as tree
+    tree = log --graph --oneline --all
+    
+    # Print last log from history
+    last = log -1 HEAD
+    
+    # Removes branch
+    br = branch -D
+
+    # Renames branch
+    bm = branch -m
+
+    # Current branch name
+    bn = rev-parse --abbrev-ref HEAD
+    
+    # Show list of commits where I'm an author
+    mylog = log --no-merges --author=mbeberok --graph --oneline
+    
+    # Show list of files with changes without chages
+    nod = !git --no-pager diff --name-only
+    
+    # Show changes in n-th commit
+    ciff = "!f() { git diff \"$1^!\"; }; f"
+    
+    fixup = commit --fixup
+    
+    # Show commit where file was added
+    when = log --diff-filter=A --
+    # Show commit ID where file was added
+    when-id = log --pretty=format:"%h" --diff-filter=A --
+    
+    # Push with set upstream
+    push-up = "!f() { git push --set-upstream $1 $(git rev-parse --abbrev-ref HEAD); }; f"

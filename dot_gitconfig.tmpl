@@ -1,0 +1,13 @@
+[include]
+    path = ".gitconf/.gitalias"
+
+[user]
+    email = {{ .git.user.email }}
+    name  = {{ .git.user.name }}
+
+[core]
+    editor = vi
+    longpaths = true
+
+[pull]
+    rebase = true
