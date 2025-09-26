@@ -6,3 +6,8 @@ LICENSE
 .bash_env
 .gitconf/git-prompt.sh
 {{- end }}
+
+{{- if ne .chezmoi.os "windows" }}
+Documents/*
+!Documents/*PowerShell/
+{{- end }}

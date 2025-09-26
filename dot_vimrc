@@ -2,7 +2,9 @@ call plug#begin()
 
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'preservim/nerdtree'
-  
+
+  Plug 'vim-airline/vim-airline'
+
   " Always load the vim-devicons as the very last one
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
