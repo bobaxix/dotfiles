@@ -1,0 +1,15 @@
+{{- if eq .chezmoi.os "windows" -}}
+$modules = @("posh-git")
+
+foreach ($item in $modules)
+{
+    if (Get-InstalledModule -Name $item)
+    {
+        Update-Module $item
+    }
+    else
+    {
+        Install-Module $item -Scope CurrentUser -Force
+    }
+}
+{{- end -}}
