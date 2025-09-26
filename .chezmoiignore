@@ -1,1 +1,7 @@
 LICENSE
+
+{{- if eq .chezmoi.os "windows" }}
+.bashrc
+.bash_aliases
+.bash_env
+{{- end }}
