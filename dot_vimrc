@@ -5,6 +5,7 @@ call plug#begin()
 
   Plug 'vim-airline/vim-airline'
   Plug 'townk/vim-autoclose'
+  Plug 'mhinz/vim-startify'
 
   " Always load the vim-devicons as the very last one
   Plug 'ryanoasis/vim-devicons'
