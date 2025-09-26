@@ -1,5 +1,18 @@
 call plug#begin()
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  Plug 'preservim/nerdtree'
+  
+  " Always load the vim-devicons as the very last one
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+" Settings
+set encoding=UTF-8
+let NERDTreeShowHidden=1
+
+" Mappings
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
