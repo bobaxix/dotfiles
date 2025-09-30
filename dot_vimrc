@@ -7,9 +7,13 @@ call plug#begin()
   Plug 'townk/vim-autoclose'
   Plug 'mhinz/vim-startify'
 
+  Plug 'nordtheme/vim'
+
   " Always load the vim-devicons as the very last one
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+colorscheme nord
 
 " Settings
 set encoding=UTF-8
