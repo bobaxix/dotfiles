@@ -18,6 +18,9 @@ colorscheme nord
 " Settings
 set encoding=UTF-8
 let NERDTreeShowHidden=1
+set tabstop=4       " Number of visual spaces per tab
+set shiftwidth=4    " Number of spaces for auto-indent
+set expandtab       " Convert tabs to spaces
 
 " Mappings
 nnoremap <leader>n :NERDTreeFocus<CR>
