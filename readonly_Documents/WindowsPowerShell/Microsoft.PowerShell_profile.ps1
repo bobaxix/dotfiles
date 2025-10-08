@@ -5,7 +5,7 @@ function Test-CommandExists($cmd) {
 }
 
 function Test-IsTermRider() {
-    return $env:TERM_PROGRAM -eq "JetBrains-JediTerm"
+    return $env:TERMINAL_EMULATOR -eq "JetBrains-JediTerm"
 }
 
 function Get-CommandSource($cmd) {
