@@ -6,8 +6,36 @@
     name  = {{ .git.user.name }}
 
 [core]
-    editor = vi
+{{- if eq .chezmoi.os "linux" -}}
+    editor = vim
+{{- end -}}
     longpaths = true
 
 [pull]
     rebase = true
+
+{{- if eq .chezmoi.os "windows" }}
+[difftool "gvim"]
+    cmd = {{ .git.tools.gvim }} -f -d "$LOCAL" "$REMOTE"
+
+[difftool "locdiff"]
+    cmd = {{ .git.tools.vim }} -d "$LOCAL" "$REMOTE"
+
+[mergetool "gvim"]
+    cmd = {{ .git.tools.gvim }} -f -d "$LOCAL" "$MERGED" "$REMOTE"
+
+[mergetool "locvim"]
+    cmd = "{{ .git.tools.vim }}" -d "$LOCAL" "$MERGED" "$REMOTE"
+{{ else }}
+[diff]
+   tool = locvim
+
+[merge]
+   tool = locvim
+
+[difftool "locvim"]
+    cmd = vimdiff "$LOCAL" "$REMOTE"
+
+[mergetool "locvim"]
+    cmd = vimdiff "$LOCAL" "$MERGED" "$REMOTE"
+{{- end  }}

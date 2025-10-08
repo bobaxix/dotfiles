@@ -48,3 +48,7 @@
     
     # Push with set upstream
     push-up = "!f() { git push --set-upstream $1 $(git rev-parse --abbrev-ref HEAD); }; f"
+{{- if eq .chezmoi.os "windows" }}
+    mergetool = "!f() { git mergetool -t $env:GIT_MERGETOOL; }; f"
+    difftool  = "!f() { git difftool -t $env:GIT_DIFFTOOL; }; f"
+{{- end  }}
