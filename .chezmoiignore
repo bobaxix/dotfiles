@@ -5,9 +5,9 @@ LICENSE
 .bash_aliases
 .bash_env
 .gitconf/git-prompt.sh
+.tmux.conf
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
-Documents/*
-!Documents/*PowerShell/
+Documents/
 {{- end }}
